@@ -1,5 +1,7 @@
 package modbus.rest.utils;
 
+import java.util.regex.Pattern;
+
 import javax.ws.rs.core.Response;
 import modbus.rest.models.BaseRestResponse;
 
@@ -19,13 +21,13 @@ public class RestServiceUtils {
 	
 	public static Response buildSuccessResponse() {
 		BaseRestResponse response = new BaseRestResponse();
-		response.setOkMessage("Operazione eseguita con successo");
+		response.setOkMessage("Operazione eseguita con successo");		
 		return Response.ok().entity(response).build();
 	}
 	
 	public static Response buildSuccessResponse(String message) {
 		BaseRestResponse response = new BaseRestResponse();
-		response.setOkMessage(message);
+		response.setOkMessage(message);	
 		return Response.ok().entity(response).build();
 	}
 	
@@ -33,6 +35,11 @@ public class RestServiceUtils {
 		BaseRestResponse response = new BaseRestResponse();
 		response.setOkMessage(message);
 		response.setResult(result);
+		
+		String str=Pattern.compile("\"").matcher(result.toString()).replaceAll("\\\"");
+		System.out.println(str);
+		
+		response.setResultstr(str);
 		return Response.ok().entity(response).build();
 	}
 	
@@ -40,6 +47,11 @@ public class RestServiceUtils {
 		BaseRestResponse response = new BaseRestResponse();
 		response.setOkMessage("Operazione eseguita con successo");
 		response.setResult(result);
+		
+		String str=Pattern.compile("\"").matcher(result.toString()).replaceAll("\\\"");
+		System.out.println(str);
+
+		response.setResultstr(str);
 		return Response.ok().entity(response).build();
 	}
 }

@@ -9,6 +9,20 @@ public class BaseRestResponse {
 	Object result;
 	long timestamp;
 
+	String resultstr;
+	
+	public String getResultstr() {
+		return resultstr;
+	}
+
+	public void setResultstr(String resultstr) {
+		this.resultstr = resultstr;
+	}
+
+	public void setTimestamp(long timestamp) {
+		this.timestamp = timestamp;
+	}
+
 	public String getMessage() {
 		return message;
 	}

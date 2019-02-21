@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [modbus-rest-utils by packages]">
+  <test thread-count="5" name="test.modbus.test.testng(failed)">
+    <classes>
+      <class name="test.modbus.test.testng.BinaryTest">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="f"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- test.modbus.test.testng.BinaryTest -->
+    </classes>
+  </test> <!-- test.modbus.test.testng(failed) -->
+</suite> <!-- Failed suite [modbus-rest-utils by packages] -->

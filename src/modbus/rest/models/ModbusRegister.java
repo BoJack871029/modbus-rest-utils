@@ -9,24 +9,46 @@ public class ModbusRegister {
 	private int register = -1;
 	private int value = -1;
 	private int bit = -1;
-//	private String name = "";
 
-	public static int getFromString(String register) {
-		int registerNumber = -1;
+	public static boolean hasBit(String register) throws Exception {
+		if (register.isEmpty()) {
+			throw new Exception("Register string is empty");
+		}
+		String[] tmp = register.split(":");
 
-		if (!register.isEmpty()) {
-			String[] tmp = register.split(":");
+		return tmp.length < 2 ? false : true;
+	}
 
-			if (tmp.length > 0) {
-				registerNumber = Integer.parseInt(tmp[0]);
-			}
+	public static int getRegisterName(String register) throws Exception {
+
+		if (register.isEmpty()) {
+			throw new Exception("Register string is empty");
 		}
 
-		return registerNumber;
+		String[] tmp = register.split(":");
+		
+		return Integer.parseInt(tmp[0]);
+
+	}
+
+	public static int getBitIndex(String register) throws Exception {
+
+		if (register.isEmpty()) {
+			throw new Exception("Register string is empty");
+		}
+
+		String[] tmp = register.split(":");
+
+		if (tmp.length < 1) {
+			throw new Exception("Register string doesn't contains bit index");
+		}
+
+		return Integer.parseInt(tmp[1]);
+
 	}
 
 	public static ModbusRegister fromString(String value) throws Exception {
-		if (value == null) {
+		if (value.isEmpty()) {
 			throw new Exception("Value is null or empty");
 		}
 
@@ -49,6 +71,14 @@ public class ModbusRegister {
 		return false;
 	}
 
+	public boolean getBitValue(int bitIndex) {
+		int bitValue = this.getValue() >> bitIndex & 1;
+		if (bitValue == 1) {
+			return true;
+		}
+		return false;
+	}
+
 	public int getBit() {
 		return bit;
 	}
@@ -56,14 +86,6 @@ public class ModbusRegister {
 	public void setBit(int bit) {
 		this.bit = bit;
 	}
-
-//	public String getName() {
-//		return name;
-//	}
-//
-//	public void setName(String name) {
-//		this.name = name;
-//	}
 
 	public int getSlave() {
 		return slave;
@@ -106,7 +128,6 @@ public class ModbusRegister {
 		this.register = register;
 		this.value = value;
 		this.bit = bit;
-//		this.name = name;
 	}
 
 	@Override
@@ -128,7 +149,8 @@ public class ModbusRegister {
 
 	@Override
 	public String toString() {
-		return "{slave:" + this.slave + ", reg:" + this.register + ", bit:" + this.bit + ", value:" + this.value + "} ";
+		return "{slave:" + this.slave + ", register:" + this.register + ", bit:" + this.bit + ", value:" + this.value
+				+ "} ";
 	}
 
 }
