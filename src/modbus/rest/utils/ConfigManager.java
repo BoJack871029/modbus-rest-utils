@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.security.InvalidParameterException;
@@ -33,28 +32,6 @@ public class ConfigManager {
 		return sb.toString();
 	}
 
-	private static void writeFile(String filePath, String content) throws IOException {
-		FileWriter writer = new FileWriter(filePath);
-
-		writer.write(content);
-
-		writer.close();
-	}
-
-	private static String readFile(String file) throws IOException {
-		BufferedReader br = new BufferedReader(new FileReader(file));
-		String sCurrentLine;
-		StringBuilder sb = new StringBuilder();
-
-		while ((sCurrentLine = br.readLine()) != null) {
-			sb.append(sCurrentLine);
-		}
-
-		br.close();
-
-		return sb.toString();
-	}
-
 	public static void writeConfig(String filePath, String content) throws IOException {
 		// File settings
 		if (filePath == null || filePath.isEmpty()) {
@@ -65,7 +42,7 @@ public class ConfigManager {
 			throw new InvalidParameterException("File content cannot be null or empty");
 		}
 
-		writeFile(filePath, content);
+		FileManager.writeFile(filePath, content);
 	}
 
 	public static String readConfig(String filePath, Class<?> currentClass) throws IOException {
@@ -83,9 +60,9 @@ public class ConfigManager {
 		String configValue = "";
 		if (!configFile.exists()) {
 			configValue = readFromResource(currentClass, "settings.json");
-			writeFile(filePath, configValue);
+			FileManager.writeFile(filePath, configValue);
 		} else {
-			configValue = readFile(filePath);
+			configValue =String.join("",  FileManager.readFile(filePath));
 		}
 
 		return configValue;

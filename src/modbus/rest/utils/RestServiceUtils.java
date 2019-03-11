@@ -36,8 +36,7 @@ public class RestServiceUtils {
 		response.setOkMessage(message);
 		response.setResult(result);
 		
-		String str=Pattern.compile("\"").matcher(result.toString()).replaceAll("\\\"");
-		System.out.println(str);
+		String str=Pattern.compile("\"").matcher(result.toString()).replaceAll("\\\"");		
 		
 		response.setResultstr(str);
 		return Response.ok().entity(response).build();
@@ -49,7 +48,6 @@ public class RestServiceUtils {
 		response.setResult(result);
 		
 		String str=Pattern.compile("\"").matcher(result.toString()).replaceAll("\\\"");
-		System.out.println(str);
 
 		response.setResultstr(str);
 		return Response.ok().entity(response).build();
