@@ -5,6 +5,16 @@ import org.apache.commons.lang3.StringUtils;
 public class Binary {
 	private static int BIN_LENGTH = 16;
 
+	public static String byteArrayToBin(byte[] value) {
+		StringBuffer binaryValue = new StringBuffer();
+		for (byte i : value) {
+			String byteInBinary = String.format("%8s", Integer.toBinaryString(i)).replace(' ', '0');
+			binaryValue.append(byteInBinary);
+		}
+		
+		return StringUtils.leftPad(binaryValue.toString(), BIN_LENGTH, '0');
+	}
+
 	public static String intToBin(int value) {
 		String binaryValue = Integer.toBinaryString(value);
 		return StringUtils.leftPad(binaryValue, BIN_LENGTH, '0');

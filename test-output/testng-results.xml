@@ -1,33 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="113" started-at="2019-02-21T18:02:58Z" finished-at="2019-02-21T18:02:58Z">
+  <suite name="Default suite" duration-ms="67" started-at="2019-04-14T10:29:10Z" finished-at="2019-04-14T10:29:10Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="113" started-at="2019-02-21T18:02:58Z" finished-at="2019-02-21T18:02:58Z">
-      <class name="test.modbus.test.testng.ModbusRegisterTest">
-        <test-method status="PASS" signature="fromString()[pri:0, instance:test.modbus.test.testng.ModbusRegisterTest@6fa38a]" name="fromString" duration-ms="60" started-at="2019-02-21T18:02:58Z" finished-at="2019-02-21T18:02:58Z">
+    <test name="Default test" duration-ms="67" started-at="2019-04-14T10:29:10Z" finished-at="2019-04-14T10:29:10Z">
+      <class name="test.modbus.test.testng.BCDTest">
+        <test-method status="PASS" signature="bcdToInt()[pri:0, instance:test.modbus.test.testng.BCDTest@6fa38a]" name="bcdToInt" duration-ms="15" started-at="2019-04-14T10:29:10Z" finished-at="2019-04-14T10:29:10Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fromString -->
-        <test-method status="PASS" signature="getBitIndex()[pri:0, instance:test.modbus.test.testng.ModbusRegisterTest@6fa38a]" name="getBitIndex" duration-ms="2" started-at="2019-02-21T18:02:58Z" finished-at="2019-02-21T18:02:58Z">
+        </test-method> <!-- bcdToInt -->
+        <test-method status="PASS" signature="intToBCD()[pri:0, instance:test.modbus.test.testng.BCDTest@6fa38a]" name="intToBCD" duration-ms="13" started-at="2019-04-14T10:29:10Z" finished-at="2019-04-14T10:29:10Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getBitIndex -->
-        <test-method status="PASS" signature="getBitValue()[pri:0, instance:test.modbus.test.testng.ModbusRegisterTest@6fa38a]" name="getBitValue" duration-ms="1" started-at="2019-02-21T18:02:58Z" finished-at="2019-02-21T18:02:58Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getBitValue -->
-        <test-method status="PASS" signature="getRegisterName()[pri:0, instance:test.modbus.test.testng.ModbusRegisterTest@6fa38a]" name="getRegisterName" duration-ms="2" started-at="2019-02-21T18:02:58Z" finished-at="2019-02-21T18:02:58Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getRegisterName -->
-        <test-method status="PASS" signature="hasBit()[pri:0, instance:test.modbus.test.testng.ModbusRegisterTest@6fa38a]" name="hasBit" duration-ms="2" started-at="2019-02-21T18:02:58Z" finished-at="2019-02-21T18:02:58Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- hasBit -->
-      </class> <!-- test.modbus.test.testng.ModbusRegisterTest -->
+        </test-method> <!-- intToBCD -->
+      </class> <!-- test.modbus.test.testng.BCDTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

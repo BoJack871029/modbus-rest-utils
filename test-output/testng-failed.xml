@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.modbus.test.testng.ModbusRegisterTest">
+      <class name="test.modbus.test.testng.BCDTest">
         <methods>
-          <include name="getBitValue"/>
+          <include name="bcdToDec"/>
         </methods>
-      </class> <!-- test.modbus.test.testng.ModbusRegisterTest -->
+      </class> <!-- test.modbus.test.testng.BCDTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -26,7 +26,7 @@ public class ModbusRegister {
 		}
 
 		String[] tmp = register.split(":");
-		
+
 		return Integer.parseInt(tmp[0]);
 
 	}
@@ -59,6 +59,25 @@ public class ModbusRegister {
 			register.setRegister(Integer.parseInt(tmp[0]));
 		if (tmp.length > 1)
 			register.setBit(Integer.parseInt(tmp[1]));
+
+		return register;
+	}
+
+	public static ModbusRegister fromMCPString(String value) throws Exception {
+		if (value.isEmpty()) {
+			throw new Exception("Value is null or empty");
+		}
+
+		MCPRegister mcpRegister = MCPRegister.fromString(value);
+
+		if (mcpRegister.getType() == MCPRegisterType.kNULL) {
+			return null;
+		}
+		
+		ModbusRegister register = new ModbusRegister();
+
+		register.setRegister(mcpRegister.getRegisterNumber());
+		register.setBit(mcpRegister.getBit());
 
 		return register;
 	}
