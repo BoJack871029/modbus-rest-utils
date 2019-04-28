@@ -76,7 +76,7 @@ public class ModbusRegisterTest {
 
 		Assert.assertEquals(regR22.getBit(), -1);
 
-		Assert.assertEquals(regR22.getRegister(), 3094);
+		Assert.assertEquals(regR22.getRegister(), 3093);
 	}
 
 	@Test
@@ -85,8 +85,18 @@ public class ModbusRegisterTest {
 
 		Assert.assertEquals(regV751.getBit(), 8);
 
-		Assert.assertEquals(regV751.getRegister(), 1171);
+		Assert.assertEquals(regV751.getRegister(), 1170);
 	}
+	
+	@Test
+	public void getFromMCPRegisterVirtual1() throws Exception {
+		ModbusRegister regV751 = ModbusRegister.fromMCPString("V450");
+
+		Assert.assertEquals(regV751.getBit(), 1);
+
+		Assert.assertEquals(regV751.getRegister(), 1180);
+	}
+	
 
 	@Test
 	public void getFromMCPRegisterEmpty() throws Exception {
@@ -101,13 +111,13 @@ public class ModbusRegisterTest {
 
 		Assert.assertEquals(regO25.getBit(), 0);
 
-		Assert.assertEquals(regO25.getRegister(), 537);
+		Assert.assertEquals(regO25.getRegister(), 536);
 
 		ModbusRegister regO26 = ModbusRegister.fromMCPString("O26.8");
 
 		Assert.assertEquals(regO26.getBit(), 7);
 
-		Assert.assertEquals(regO26.getRegister(), 538);
+		Assert.assertEquals(regO26.getRegister(), 537);
 	}
 
 	@Test

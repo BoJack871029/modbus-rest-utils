@@ -1,21 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="14" passed="14">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="67" started-at="2019-04-14T10:29:10Z" finished-at="2019-04-14T10:29:10Z">
+  <suite name="Default suite" duration-ms="142" started-at="2019-04-28T13:48:19Z" finished-at="2019-04-28T13:48:19Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="67" started-at="2019-04-14T10:29:10Z" finished-at="2019-04-14T10:29:10Z">
-      <class name="test.modbus.test.testng.BCDTest">
-        <test-method status="PASS" signature="bcdToInt()[pri:0, instance:test.modbus.test.testng.BCDTest@6fa38a]" name="bcdToInt" duration-ms="15" started-at="2019-04-14T10:29:10Z" finished-at="2019-04-14T10:29:10Z">
+    <test name="Default test" duration-ms="142" started-at="2019-04-28T13:48:19Z" finished-at="2019-04-28T13:48:19Z">
+      <class name="test.modbus.test.testng.ModbusRegisterTest">
+        <test-method status="PASS" signature="fromString()[pri:0, instance:test.modbus.test.testng.ModbusRegisterTest@a3ffec]" name="fromString" duration-ms="64" started-at="2019-04-28T13:48:19Z" finished-at="2019-04-28T13:48:19Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- bcdToInt -->
-        <test-method status="PASS" signature="intToBCD()[pri:0, instance:test.modbus.test.testng.BCDTest@6fa38a]" name="intToBCD" duration-ms="13" started-at="2019-04-14T10:29:10Z" finished-at="2019-04-14T10:29:10Z">
+        </test-method> <!-- fromString -->
+        <test-method status="PASS" signature="getBitIndex()[pri:0, instance:test.modbus.test.testng.ModbusRegisterTest@a3ffec]" name="getBitIndex" duration-ms="2" started-at="2019-04-28T13:48:19Z" finished-at="2019-04-28T13:48:19Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- intToBCD -->
-      </class> <!-- test.modbus.test.testng.BCDTest -->
+        </test-method> <!-- getBitIndex -->
+        <test-method status="PASS" signature="getBitValue()[pri:0, instance:test.modbus.test.testng.ModbusRegisterTest@a3ffec]" name="getBitValue" duration-ms="2" started-at="2019-04-28T13:48:19Z" finished-at="2019-04-28T13:48:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getBitValue -->
+        <test-method status="PASS" signature="getFromMCPRegisterAnalogicInput()[pri:0, instance:test.modbus.test.testng.ModbusRegisterTest@a3ffec]" name="getFromMCPRegisterAnalogicInput" duration-ms="3" started-at="2019-04-28T13:48:19Z" finished-at="2019-04-28T13:48:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getFromMCPRegisterAnalogicInput -->
+        <test-method status="PASS" signature="getFromMCPRegisterEmpty()[pri:0, instance:test.modbus.test.testng.ModbusRegisterTest@a3ffec]" name="getFromMCPRegisterEmpty" duration-ms="1" started-at="2019-04-28T13:48:19Z" finished-at="2019-04-28T13:48:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getFromMCPRegisterEmpty -->
+        <test-method status="PASS" signature="getFromMCPRegisterInputNoBit()[pri:0, instance:test.modbus.test.testng.ModbusRegisterTest@a3ffec]" name="getFromMCPRegisterInputNoBit" duration-ms="1" started-at="2019-04-28T13:48:19Z" finished-at="2019-04-28T13:48:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getFromMCPRegisterInputNoBit -->
+        <test-method status="PASS" signature="getFromMCPRegisterInputWithBit()[pri:0, instance:test.modbus.test.testng.ModbusRegisterTest@a3ffec]" name="getFromMCPRegisterInputWithBit" duration-ms="1" started-at="2019-04-28T13:48:19Z" finished-at="2019-04-28T13:48:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getFromMCPRegisterInputWithBit -->
+        <test-method status="PASS" signature="getFromMCPRegisterNoConversion()[pri:0, instance:test.modbus.test.testng.ModbusRegisterTest@a3ffec]" name="getFromMCPRegisterNoConversion" duration-ms="1" started-at="2019-04-28T13:48:19Z" finished-at="2019-04-28T13:48:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getFromMCPRegisterNoConversion -->
+        <test-method status="PASS" signature="getFromMCPRegisterOutputWithBit()[pri:0, instance:test.modbus.test.testng.ModbusRegisterTest@a3ffec]" name="getFromMCPRegisterOutputWithBit" duration-ms="1" started-at="2019-04-28T13:48:19Z" finished-at="2019-04-28T13:48:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getFromMCPRegisterOutputWithBit -->
+        <test-method status="PASS" signature="getFromMCPRegisterRegister()[pri:0, instance:test.modbus.test.testng.ModbusRegisterTest@a3ffec]" name="getFromMCPRegisterRegister" duration-ms="1" started-at="2019-04-28T13:48:19Z" finished-at="2019-04-28T13:48:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getFromMCPRegisterRegister -->
+        <test-method status="PASS" signature="getFromMCPRegisterVirtual()[pri:0, instance:test.modbus.test.testng.ModbusRegisterTest@a3ffec]" name="getFromMCPRegisterVirtual" duration-ms="2" started-at="2019-04-28T13:48:19Z" finished-at="2019-04-28T13:48:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getFromMCPRegisterVirtual -->
+        <test-method status="PASS" signature="getFromMCPRegisterVirtual1()[pri:0, instance:test.modbus.test.testng.ModbusRegisterTest@a3ffec]" name="getFromMCPRegisterVirtual1" duration-ms="0" started-at="2019-04-28T13:48:19Z" finished-at="2019-04-28T13:48:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getFromMCPRegisterVirtual1 -->
+        <test-method status="PASS" signature="getRegisterName()[pri:0, instance:test.modbus.test.testng.ModbusRegisterTest@a3ffec]" name="getRegisterName" duration-ms="1" started-at="2019-04-28T13:48:19Z" finished-at="2019-04-28T13:48:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getRegisterName -->
+        <test-method status="PASS" signature="hasBit()[pri:0, instance:test.modbus.test.testng.ModbusRegisterTest@a3ffec]" name="hasBit" duration-ms="2" started-at="2019-04-28T13:48:19Z" finished-at="2019-04-28T13:48:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- hasBit -->
+      </class> <!-- test.modbus.test.testng.ModbusRegisterTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
