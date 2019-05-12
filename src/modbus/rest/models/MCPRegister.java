@@ -1,7 +1,7 @@
 package modbus.rest.models;
 
 public class MCPRegister {
-    static int _offesetRegistro = 3071; //Errore nel manuale
+    static int _offesetRegistro = 2047; //Errore nel manuale
     static int _offsetVirtuale = 1152;  //Errore nel manuale
     static int _offsetUscita = 511;
     public String type;
@@ -139,7 +139,7 @@ public class MCPRegister {
     private int getNumberFromVirtuale() {
 	int register = this.getValue();
 
-	register = (int) (register / 16);
+	register = (int) ( (register-1) / 16);
 
 	register = _offsetVirtuale + register;
 	return register;

@@ -76,7 +76,7 @@ public class ModbusRegisterTest {
 
 		Assert.assertEquals(regR22.getBit(), -1);
 
-		Assert.assertEquals(regR22.getRegister(), 3093);
+		Assert.assertEquals(regR22.getRegister(), 2069);
 	}
 
 	@Test

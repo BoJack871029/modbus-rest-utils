@@ -13,7 +13,7 @@ public class MCPRegisterTest {
 
 		MCPRegister register = MCPRegister.fromString("V751");
 
-		Assert.assertEquals(register.getRegisterNumber(), 1199);
+		Assert.assertEquals(register.getRegisterNumber(), 1198);
 		Assert.assertEquals(register.getBit(), 14);
 		
 		MCPRegister registerEmpty = MCPRegister.fromString("N");
@@ -26,7 +26,7 @@ public class MCPRegisterTest {
 	@Test
 	public void RegisterIsRegister() throws Exception {
 		MCPRegister register = MCPRegister.fromString("R22");
-		Assert.assertEquals(register.getRegisterNumber(), 3094);		
+		Assert.assertEquals(register.getRegisterNumber(), 2069);		
 	}
 
 }
