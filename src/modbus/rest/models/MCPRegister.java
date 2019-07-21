@@ -1,8 +1,8 @@
 package modbus.rest.models;
 
 public class MCPRegister {
-    static int _offesetRegistro = 2047; //Errore nel manuale
-    static int _offsetVirtuale = 1152;  //Errore nel manuale
+    static int _offesetRegistro = 2047; // Errore nel manuale
+    static int _offsetVirtuale = 1152; // Errore nel manuale
     static int _offsetUscita = 511;
     public String type;
     public int value;
@@ -44,9 +44,10 @@ public class MCPRegister {
 	    register = getNumberFromRegister();
 	} else if (this.type.equals(MCPRegisterType.kVIRTUALE)) {
 	    register = getNumberFromVirtuale();
-	} else if (this.type.equals(MCPRegisterType.kINGRESSO)
-		|| this.type.equals(MCPRegisterType.kINGRESSOANALOGICO)) {
+	} else if (this.type.equals(MCPRegisterType.kINGRESSO)) {
 	    register = getNumberFromIngresso();
+	} else if (this.type.equals(MCPRegisterType.kINGRESSOANALOGICO)) {
+	    register = getNumberFromIngressoAnalogico();
 	} else if (this.type.equals(MCPRegisterType.kUSCITA)) {
 	    register = getNumberFromUscita();
 	} else if (this.type.equals(MCPRegisterType.kNOCONVERSION)) {
@@ -139,15 +140,20 @@ public class MCPRegister {
     private int getNumberFromVirtuale() {
 	int register = this.getValue();
 
-	register = (int) ( (register-1) / 16);
+	register = (int) ((register - 1) / 16);
 
 	register = _offsetVirtuale + register;
 	return register;
     }
 
-    private int getNumberFromIngresso() {
+    private int getNumberFromIngressoAnalogico() {
 	// Formula: x
 	return this.getValue();
+    }
+
+    private int getNumberFromIngresso() {
+	// Formula: x
+	return this.getValue() - 1;
     }
 
     private int getNumberFromUscita() {

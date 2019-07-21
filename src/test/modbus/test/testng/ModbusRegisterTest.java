@@ -126,13 +126,13 @@ public class ModbusRegisterTest {
 
 		Assert.assertEquals(regI44.getBit(), 7);
 
-		Assert.assertEquals(regI44.getRegister(), 44);
+		Assert.assertEquals(regI44.getRegister(), 43);
 
 		ModbusRegister regI43 = ModbusRegister.fromMCPString("I43.1");
 
 		Assert.assertEquals(regI43.getBit(), 0);
 
-		Assert.assertEquals(regI43.getRegister(), 43);
+		Assert.assertEquals(regI43.getRegister(), 42);
 	}
 
 	@Test
@@ -141,7 +141,7 @@ public class ModbusRegisterTest {
 
 		Assert.assertEquals(regI44NoBit.getBit(), -1);
 
-		Assert.assertEquals(regI44NoBit.getRegister(), 44);
+		Assert.assertEquals(regI44NoBit.getRegister(), 43);
 	}
 	
 	@Test
